@@ -50,6 +50,7 @@ DEPRECATED_WEBCAM_KEYS = (
 )
 
 REAUTHED_SETTINGS = {
+    "accessControl": {"defaultReauthenticationTimeout": True},
     "server": {"commands": True},
     "webcam": {
         "ffmpegPath": True,
