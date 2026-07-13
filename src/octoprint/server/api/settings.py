@@ -17,6 +17,7 @@ from octoprint.server import pluginManager, userManager
 from octoprint.server.api import NO_CONTENT, api
 from octoprint.server.util.flask import (
     api_version_matches,
+    apply_path_restrictions,
     credentials_checked_recently,
     ensure_credentials_checked_recently,
     no_firstrun_access,
@@ -58,6 +59,30 @@ REAUTHED_SETTINGS = {
         "ffmpegThumbnailCommandline": True,
     },
     "system": {"actions": True},
+}
+
+PATH_RESTRICTIONS = {
+    Permissions.ADMIN: [
+        ["accessControl"],
+        ["api"],
+    ],
+    Permissions.SETTINGS: [
+        ["devel"],
+        ["feature", "pollWatched"],
+        ["folder"],
+        ["gcodeAnalysis", "runAt"],
+        ["server"],
+        ["system"],
+        ["scripts"],
+        ["webcam", "bitrate"],
+        ["webcam", "ffmpegPath"],
+        ["webcam", "ffmpegCommandline"],
+        ["webcam", "ffmpegVideoCodec"],
+        ["webcam", "ffmpegThreads"],
+        ["webcam", "watermark"],
+    ],
+    Permissions.CONTROL: [["controls"]],
+    Permissions.TIMELAPSE_ADMIN: [["webcam", "ffmpegPathConfigured"]],
 }
 
 SETTINGS_API_VERSION = 1
@@ -139,12 +164,17 @@ def getSettings():
     # is changed, added or removed here
 
     data = {
-        "api": {
-            "key": (
-                s.get(["api", "key"])
-                if Permissions.ADMIN.can() and credentials_checked_recently()
-                else None
+        "accessControl": {
+            "autologinLocal": s.getBoolean(["accessControl", "autologinLocal"]),
+            "autologinHeadsupAcknowledged": s.getBoolean(
+                ["accessControl", "autologinHeadsupAcknowledged"]
             ),
+            "defaultReauthenticationTimeout": s.getInt(
+                ["accessControl", "defaultReauthenticationTimeout"]
+            ),
+        },
+        "api": {
+            "key": s.get(["api", "key"]),
             "allowCrossOrigin": s.get(["api", "allowCrossOrigin"]),
         },
         "appearance": {
@@ -174,6 +204,7 @@ def getSettings():
                 "stateScale": s.getInt(["appearance", "thumbnails", "stateScale"]),
             },
         },
+        "controls": s.get(["controls"]),
         "feature": {
             "temperatureGraph": s.getBoolean(["feature", "temperatureGraph"]),
             "sdSupport": s.getBoolean(["feature", "sdSupport"]),
@@ -294,6 +325,7 @@ def getSettings():
             "webcamEnabled": s.getBoolean(["webcam", "webcamEnabled"]),
             "timelapseEnabled": s.getBoolean(["webcam", "timelapseEnabled"]),
             "ffmpegPath": s.get(["webcam", "ffmpeg"]),
+            "ffmpegPathConfigured": bool(s.get(["webcam", "ffmpeg"])),
             "ffmpegCommandline": s.get(["webcam", "ffmpegCommandline"]),
             "bitrate": s.get(["webcam", "bitrate"]),
             "ffmpegThreads": s.get(["webcam", "ffmpegThreads"]),
@@ -345,21 +377,12 @@ def getSettings():
     else:
         data["webcam"] = {}
 
-    if Permissions.CONTROL.can():
-        data["controls"] = s.get(["controls"])
-    else:
-        data["controls"] = []
+    data = apply_path_restrictions(
+        data, PATH_RESTRICTIONS, current_user, keep_leaves=True
+    )  # redact all restricted leaves
 
-    if Permissions.ADMIN.can():
-        data["accessControl"] = {
-            "autologinLocal": s.getBoolean(["accessControl", "autologinLocal"]),
-            "autologinHeadsupAcknowledged": s.getBoolean(
-                ["accessControl", "autologinHeadsupAcknowledged"]
-            ),
-            "defaultReauthenticationTimeout": s.getInt(
-                ["accessControl", "defaultReauthenticationTimeout"]
-            ),
-        }
+    if not Permissions.ADMIN.can() or not credentials_checked_recently():
+        data.get("api", {})["key"] = None
 
     return jsonify(data)
 
@@ -852,6 +875,7 @@ def _saveSettings(data):
         if "actions" in data["system"]:
             s.set(["system", "actions"], data["system"]["actions"])
         if "events" in data["system"] and not api_version_matches(">=2.0.0"):
+            # Keep this! Backwards compatibility for <2.0.0, see data model docs!
             s.set(["events"], data["system"]["events"])
 
     if "scripts" in data:
@@ -1045,7 +1069,7 @@ def _get_serial_settings():
             ["printerConnection", "preferred", "parameters"]
         )
 
-    return {
+    result = {
         "port": preferred_connection_params.get("port"),
         "baudrate": preferred_connection_params.get("baudrate"),
         "exclusive": s.getBoolean(["plugins", "serial_connector", "exclusive"]),
@@ -1223,6 +1247,16 @@ def _get_serial_settings():
             ["plugins", "serial_connector", "enableShutdownActionCommand"]
         ),
     }
+
+    restricted_paths = {
+        Permissions.SETTINGS: [
+            [key] for key in result.keys() if key not in ("log", "ignoreEmptyPorts")
+        ]
+    }
+
+    return apply_path_restrictions(
+        result, restricted_paths, current_user, keep_leaves=True
+    )
 
 
 def _set_serial_settings(data: dict[str, Any]):
