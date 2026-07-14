@@ -106,5 +106,5 @@ def test_admin(base_url, admin_credentials):
     assert data["accessControl"]["defaultReauthenticationTimeout"] is not None
 
     assert "api" in data
-    assert "key" in data["api"]
+    assert "key" not in data["api"]  # removed in 2.1.0
     assert data["api"]["allowCrossOrigin"] is not None
