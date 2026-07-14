@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OctoPrint 2.0.0\n"
 "Report-Msgid-Bugs-To: i18n@octoprint.org\n"
-"POT-Creation-Date: 2026-06-22 10:44+0200\n"
+"POT-Creation-Date: 2026-07-13 13:57+0200\n"
 "PO-Revision-Date: 2026-05-19 10:14+0200\n"
 "Last-Translator: Gina Häußge <gina@octoprint.org>\n"
 "Language: de\n"
@@ -14,13 +14,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.18.0\n"
 
 #: src/octoprint/access/permissions.py:274
 msgid "Admin is allowed to do everything"
 msgstr "Admins dürfen alles tun"
 
-#: src/octoprint/access/permissions.py:282
+#: src/octoprint/access/permissions.py:283
 msgid ""
 "Allows to gather basic status information, e.g. job progress, printer "
 "state, temperatures, ... Mandatory for the default UI to work"
@@ -37,7 +37,7 @@ msgstr "Erlaubt Verbindung und Verbindungstrennung zum Drucker"
 msgid "Allows to watch the webcam stream"
 msgstr "Erlaubt Einbettung des Webcamstreams"
 
-#: src/octoprint/access/permissions.py:307
+#: src/octoprint/access/permissions.py:308
 msgid ""
 "Allows to run system commands, e.g. restart OctoPrint, shutdown or reboot"
 " the system, and to retrieve system and usage information"
@@ -46,7 +46,7 @@ msgstr ""
 "System herunterfahren oder neu starten, und die Abfrage von "
 "Systeminformation"
 
-#: src/octoprint/access/permissions.py:317
+#: src/octoprint/access/permissions.py:318
 msgid ""
 "Allows to retrieve a list of all uploaded files and folders, including "
 "their metadata (e.g. date, file size, analysis results, ...)"
@@ -55,7 +55,7 @@ msgstr ""
 "Verzeichnisse, inkl. ihrer Metadaten (z.B. Datum, Dateigröße, "
 "Analyseergebnisse, …)"
 
-#: src/octoprint/access/permissions.py:326
+#: src/octoprint/access/permissions.py:327
 msgid ""
 "Allows users to upload new files, create new folders and copy existing "
 "ones. If the File Delete permission is also set, File Upload also allows "
@@ -66,7 +66,7 @@ msgstr ""
 " Berechtigung ebenfalls gesetzt ist, erlaubt File Upload auch das "
 "Verschieben von Dateien und Verzeichnissen."
 
-#: src/octoprint/access/permissions.py:336
+#: src/octoprint/access/permissions.py:337
 msgid ""
 "Allows users to download files. The GCODE viewer is affected by this as "
 "well."
@@ -74,7 +74,7 @@ msgstr ""
 "Erlaubt das Herunterladen von Dateien. Der GCODE viewer benötigt dieses "
 "Recht."
 
-#: src/octoprint/access/permissions.py:345
+#: src/octoprint/access/permissions.py:346
 msgid ""
 "Allows users to delete files and folders. If the File Upload permission "
 "is also set, File Delete also allows moving files and folders."
@@ -91,7 +91,7 @@ msgstr "Erlaubt die Auswahl einer Datei zum Drucken"
 msgid "Allows to start, pause and cancel a print job"
 msgstr "Erlaubt das starten, pausieren und abbrechen eines Druckauftrags"
 
-#: src/octoprint/access/permissions.py:368
+#: src/octoprint/access/permissions.py:369
 msgid ""
 "Allows access to the GCODE viewer if the \"File Download\" permission is "
 "also set."
@@ -99,7 +99,7 @@ msgstr ""
 "Erlaubt den Zugriff auf den GCODE viewer falls die \"File Download\" "
 "Berechtigung ebenfalls gesetzt ist."
 
-#: src/octoprint/access/permissions.py:378
+#: src/octoprint/access/permissions.py:379
 msgid ""
 "Allows to watch the terminal tab but not to send commands to the printer "
 "from it"
@@ -107,7 +107,7 @@ msgstr ""
 "Erlaubt lesenden Zugriff auf das Terminal Tab. Das Senden von Befehlen "
 "zum Drucker ist nicht gestattet"
 
-#: src/octoprint/access/permissions.py:388
+#: src/octoprint/access/permissions.py:389
 msgid ""
 "Allows to control of the printer by using the temperature controls, the "
 "control tab or sending commands through the terminal."
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Allows to change the timelapse settings."
 msgstr "Erlaubt die Änderung von Zeitraffereinstellungen"
 
-#: src/octoprint/access/permissions.py:436
+#: src/octoprint/access/permissions.py:437
 msgid ""
 "Allows to read non sensitive settings. Mandatory for the default UI to "
 "work."
@@ -153,13 +153,13 @@ msgstr ""
 msgid "Allows to manage settings and also to read sensitive settings"
 msgstr "Erlaubt vollen Zugriff auf alle Einstellungen"
 
-#: src/octoprint/plugins/achievements/__init__.py:130
+#: src/octoprint/plugins/achievements/__init__.py:131
 msgid "Allows to view the instance achievements & stats."
 msgstr ""
 "Erlaubt die Anzeige der Achievements & Instanz-Statistiken und "
 "Achievements."
 
-#: src/octoprint/plugins/achievements/__init__.py:139
+#: src/octoprint/plugins/achievements/__init__.py:140
 msgid "Allows to reset the instance achievements & stats."
 msgstr "Erlaubt das Zurücksetzen der Achievements & Instanz-Statistiken."
 
@@ -177,7 +177,7 @@ msgstr "Instanz-Statistiken"
 msgid "Achievements & Instance Stats"
 msgstr "Achievements & Instanz-Statistiken"
 
-#: src/octoprint/plugins/achievements/__init__.py:899
+#: src/octoprint/plugins/achievements/__init__.py:900
 msgid ""
 "Without this plugin you will no longer be able to earn achievements and "
 "track stats about your OctoPrint instance."
@@ -448,7 +448,7 @@ msgstr "Erlaubt das Löschen von Druckerbenachrichtigungen"
 msgid "Printer Notifications"
 msgstr "Druckerbenachrichtigungen"
 
-#: src/octoprint/plugins/action_command_notification/__init__.py:166
+#: src/octoprint/plugins/action_command_notification/__init__.py:167
 msgid ""
 "Without this plugin your printer will no longer be able to trigger "
 "notifications in OctoPrint"
@@ -526,7 +526,7 @@ msgstr "Erlaubt Zugriff auf Printerprompts"
 msgid "Printer Dialogs"
 msgstr "Printerdialoge"
 
-#: src/octoprint/plugins/action_command_prompt/__init__.py:290
+#: src/octoprint/plugins/action_command_prompt/__init__.py:291
 msgid ""
 "Without this plugin your printer will no longer be able to trigger "
 "confirmation or selection prompts in OctoPrint"
@@ -624,7 +624,7 @@ msgstr ""
 msgid "Allows to read announcements"
 msgstr "EJrlaubt das Lesen von Ankündigungen"
 
-#: src/octoprint/plugins/announcements/__init__.py:72
+#: src/octoprint/plugins/announcements/__init__.py:73
 msgid ""
 "Allows to manage announcement subscriptions. Includes \"Read "
 "announcements\" permission"
@@ -639,7 +639,7 @@ msgstr ""
 msgid "Announcements"
 msgstr "Ankündigungen"
 
-#: src/octoprint/plugins/announcements/__init__.py:680
+#: src/octoprint/plugins/announcements/__init__.py:681
 msgid ""
 "Without this plugin you might miss important announcements regarding "
 "security or other critical issues concerning OctoPrint."
@@ -770,7 +770,7 @@ msgstr "Erlaubt Zugriffsgewährung für Apps"
 msgid "Application Keys"
 msgstr "Application Keys"
 
-#: src/octoprint/plugins/appkeys/__init__.py:281
+#: src/octoprint/plugins/appkeys/__init__.py:282
 #: src/octoprint/plugins/appkeys/static/js/appkeys.js:149
 #, python-format
 msgid ""
@@ -782,7 +782,7 @@ msgstr ""
 "identifiziert, möchte Zugriff auf OctoPrint über die API haben. Die "
 "Anfrage hierzu kommt von <code>%(remote_address)s</code>."
 
-#: src/octoprint/plugins/appkeys/__init__.py:703
+#: src/octoprint/plugins/appkeys/__init__.py:704
 msgid ""
 "Without this plugin third party clients will no longer be able to obtain "
 "an API key without you manually copy-pasting it."
@@ -1057,7 +1057,7 @@ msgstr "Sicherung & Wiederherstellung"
 msgid "Restore Backup?"
 msgstr "Sicherung wiederherstellen?"
 
-#: src/octoprint/plugins/backup/__init__.py:1652
+#: src/octoprint/plugins/backup/__init__.py:1653
 msgid ""
 "Without this plugin you will no longer be able to backup & restore your "
 "OctoPrint settings and data."
@@ -1508,7 +1508,7 @@ msgstr "Hochladen & wiederherstellen"
 msgid "Classic Webcam"
 msgstr "Klassische Webcam"
 
-#: src/octoprint/plugins/classicwebcam/__init__.py:287
+#: src/octoprint/plugins/classicwebcam/__init__.py:288
 msgid ""
 "This plugin provides the standard webcam in OctoPrint. If you do not have"
 " any other plugin providing a webcam set up, the webcam section in the "
@@ -1887,7 +1887,7 @@ msgstr ""
 "getrennt werden. Wenn du dir unsicher bist, behalte die "
 "Standardeinstellung <code>stun:stun.l.google.com:19302</code> bei."
 
-#: src/octoprint/plugins/corewizard/__init__.py:135
+#: src/octoprint/plugins/corewizard/__init__.py:136
 msgid ""
 "Without this plugin OctoPrint will no longer be able to perform setup "
 "steps that might be required after an update."
@@ -2468,7 +2468,7 @@ msgstr "Offset"
 msgid "Confirm"
 msgstr "Bestätigen"
 
-#: src/octoprint/plugins/discovery/__init__.py:798
+#: src/octoprint/plugins/discovery/__init__.py:799
 msgid ""
 "Without this plugin your OctoPrint instance will no longer be "
 "discoverable on the network via Bonjour and uPnP."
@@ -2615,7 +2615,7 @@ msgstr ""
 msgid "Event Manager"
 msgstr "Eventmanager"
 
-#: src/octoprint/plugins/eventmanager/__init__.py:78
+#: src/octoprint/plugins/eventmanager/__init__.py:79
 msgid "Plugin to configure event subscriptions available in config.yaml."
 msgstr "Plugin, um Eventsubscriptions in config.yaml zu konfigurieren."
 
@@ -2726,7 +2726,7 @@ msgstr "Vergiss nicht, die Einstellungen zu speichern."
 msgid "GCode Viewer"
 msgstr "GCode Viewer"
 
-#: src/octoprint/plugins/gcodeviewer/__init__.py:113
+#: src/octoprint/plugins/gcodeviewer/__init__.py:114
 msgid ""
 "Without this plugin the GCode Viewer in OctoPrint will no longer be "
 "available."
@@ -3098,11 +3098,11 @@ msgstr ""
 msgid "Force compression"
 msgstr "Kompression erzwingen"
 
-#: src/octoprint/plugins/health_check/__init__.py:135
+#: src/octoprint/plugins/health_check/__init__.py:136
 msgid "Allows to perform health checks and view their results"
 msgstr "Erlaubt das Ausführen und die Auswertung von Healthchecks"
 
-#: src/octoprint/plugins/health_check/__init__.py:251
+#: src/octoprint/plugins/health_check/__init__.py:252
 msgid ""
 "Without this plugin you might miss problematic issues with your OctoPrint"
 " installation."
@@ -3416,7 +3416,7 @@ msgstr ""
 "Es ist nicht empfohlen, Warnungen zu ignorieren, sie können mit der Zeit "
 "zu handfesten Problemen werden!"
 
-#: src/octoprint/plugins/logging/__init__.py:35
+#: src/octoprint/plugins/logging/__init__.py:36
 msgid "Allows to download and delete log files and list and set log levels."
 msgstr ""
 "Erlaubt den Download von Logdateien sowie deren Löschung und das Setzen "
@@ -3426,7 +3426,7 @@ msgstr ""
 msgid "Logging"
 msgstr "Logging"
 
-#: src/octoprint/plugins/logging/__init__.py:284
+#: src/octoprint/plugins/logging/__init__.py:285
 msgid ""
 "Without this plugin you will no longer be able to retrieve OctoPrint's "
 "logs or modify the current logging levels through the web interface."
@@ -3560,13 +3560,13 @@ msgstr "Logger wählen..."
 msgid "Allows to list installed plugins."
 msgstr "Ermöglicht das Auflisten der installierten Plugins."
 
-#: src/octoprint/plugins/pluginmanager/__init__.py:259
+#: src/octoprint/plugins/pluginmanager/__init__.py:260
 msgid "Allows to enable, disable and uninstall installed plugins."
 msgstr ""
 "Erlaubt das aktivieren, deaktivieren und deinstallieren installierter "
 "Plugins."
 
-#: src/octoprint/plugins/pluginmanager/__init__.py:268
+#: src/octoprint/plugins/pluginmanager/__init__.py:269
 msgid "Allows to install new plugins. Includes the \"Manage plugins\" permission."
 msgstr ""
 "Erlaubt das Installieren neuer Plugins. Beinhaltet die \"Manage plugins\""
@@ -4781,7 +4781,7 @@ msgstr "<code>--user</code> mit <code>pip install</code> verwenden"
 msgid "Serial Connection"
 msgstr "Serielle Verbindung"
 
-#: src/octoprint/plugins/serial_connector/__init__.py:247
+#: src/octoprint/plugins/serial_connector/__init__.py:248
 msgid ""
 "Without this plugin you will no longer be able to connect to printers "
 "based on serial communication."
@@ -5876,7 +5876,7 @@ msgstr "Aktualisieren?"
 msgid "OctoPrint"
 msgstr "OctoPrint"
 
-#: src/octoprint/plugins/softwareupdate/__init__.py:2585
+#: src/octoprint/plugins/softwareupdate/__init__.py:2586
 msgid ""
 "Without this plugin OctoPrint will no longer be able to update itself or "
 "any of your installed plugins which might put your system at risk."
@@ -7451,7 +7451,7 @@ msgstr "Beenden"
 msgid "Shutdown system"
 msgstr "System herunterfahren"
 
-#: src/octoprint/server/api/system.py:264
+#: src/octoprint/server/api/system.py:265
 msgid ""
 "<strong>You are about to shutdown the system.</strong></p><p>This action "
 "may disrupt any ongoing print jobs (depending on your printer's "
@@ -7467,7 +7467,7 @@ msgstr ""
 msgid "Reboot system"
 msgstr "System neustarten"
 
-#: src/octoprint/server/api/system.py:272
+#: src/octoprint/server/api/system.py:273
 msgid ""
 "<strong>You are about to reboot the system.</strong></p><p>This action "
 "may disrupt any ongoing print jobs (depending on your printer's "
@@ -7484,7 +7484,7 @@ msgstr ""
 msgid "Restart OctoPrint"
 msgstr "OctoPrint neustarten"
 
-#: src/octoprint/server/api/system.py:280
+#: src/octoprint/server/api/system.py:281
 msgid ""
 "<strong>You are about to restart the OctoPrint "
 "server.</strong></p><p>This action may disrupt any ongoing print jobs "
@@ -7501,7 +7501,7 @@ msgstr ""
 msgid "Restart OctoPrint in safe mode"
 msgstr "OctoPrint im Sicherheitsmodus neustarten"
 
-#: src/octoprint/server/api/system.py:287
+#: src/octoprint/server/api/system.py:288
 msgid ""
 "<strong>You are about to restart the OctoPrint server in safe "
 "mode.</strong></p><p>This action may disrupt any ongoing print jobs "
@@ -7850,7 +7850,7 @@ msgstr "Bitte gib einen neuen Wert ein:"
 msgid "Progress"
 msgstr "Fortschritt"
 
-#: src/octoprint/static/js/app/main.js:227
+#: src/octoprint/static/js/app/main.js:229
 msgid "Reloading..."
 msgstr "Lade neu..."
 
