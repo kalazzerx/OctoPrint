@@ -50,11 +50,11 @@ BRANCH_VERSIONS = [
         "commit": "42be7409d4820431043da48ece30014e26b47073",
         "patterns": ["bugfix", "bug/.*"],
     },
-    # next is currently the branch for preparation of 2.0.0rc4
+    # next is currently the branch for preparation of 2.0.0rc5
     # so is regression/...
     {
-        "tag": "2.0.0rc4",
-        "commit": "3e1fa9c6679df57bd50d425b90bef89e880d1385",
+        "tag": "2.0.0rc5",
+        "commit": "7e948d3021b03a40c38e62c4f0049a1a7225d347",
         "patterns": ["next", "fixnext/.*", "wipnext/.*", "regression/.*"],
     },
     # dev is ongoing work towards 2.0.0
