@@ -1370,7 +1370,6 @@ class Server:
         )
 
         js_libs = [
-            "js/lib/babel-polyfill.min.js",
             "js/lib/jquery/jquery.min.js",
             "js/lib/modernizr.custom.js",
             "js/lib/lodash.min.js",
