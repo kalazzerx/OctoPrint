@@ -891,30 +891,28 @@ $(function () {
                     profiles: function () {
                         var result = [];
                         _.each(self.temperature_profiles(), function (profile) {
-                            try {
-                                result.push({
-                                    name: profile.name,
-                                    extruder: Math.floor(
-                                        _.isNumber(profile.extruder)
-                                            ? profile.extruder
-                                            : parseInt(profile.extruder)
-                                    ),
-                                    bed: Math.floor(
-                                        _.isNumber(profile.bed)
-                                            ? profile.bed
-                                            : parseInt(profile.bed)
-                                    ),
-                                    chamber: Math.floor(
-                                        _.isNumber(profile.chamber)
-                                            ? profile.chamber
-                                            : _.isNumber(parseInt(profile.chamber))
-                                              ? parseInt(profile.chamber)
-                                              : 0
-                                    )
-                                });
-                            } catch (ex) {
-                                // ignore
-                            }
+                            const sanitize = (val) => {
+                                if (!val) return 0;
+
+                                if (!_.isNumber(val)) {
+                                    try {
+                                        // try parsing it
+                                        val = parseInt(val);
+                                    } catch (exc) {
+                                        // failure to parse -> 0
+                                        return 0;
+                                    }
+                                }
+
+                                return Math.floor(val);
+                            };
+
+                            result.push({
+                                name: profile.name,
+                                extruder: sanitize(profile.extruder),
+                                bed: sanitize(profile.bed),
+                                chamber: sanitize(profile.chamber)
+                            });
                         });
                         return result;
                     }
