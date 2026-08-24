@@ -13,7 +13,6 @@ thanks to everyone who contributed!
   * Anthony Gainsborough
   * Ash King
   * Boris Hussein
-  * Brad Jackson
   * Bradford Benn
   * Bret Wortman
   * Brian Vaerewyck
@@ -41,7 +40,6 @@ thanks to everyone who contributed!
   * jrytio
   * Justin Kaufman
   * Kaile Riser
-  * Keenan Newton
   * kliment
   * Kurt Wubbels
   * Makespace Madrid
@@ -57,7 +55,6 @@ thanks to everyone who contributed!
   * Norman Jaffe
   * Randy C. Will
   * Ranjib Dey
-  * Richard Stocks
   * Rik KM
   * Robert Gusek
   * Sebastien Andrivet
@@ -67,4 +64,4 @@ thanks to everyone who contributed!
   * Timothy Efinger
   * Ulrich Kempken
 
-and 2117 more wonderful people pledging on the [Patreon campaign](https://patreon.com/foosel), on [GitHub Sponsors](https://github.com/users/foosel/sponsorship), via [Ko-fi](https://ko-fi.com/octoprint) or [Donorbox](https://donorbox.org/support-octoprint?recurring=true)!
+and 2079 more wonderful people pledging on the [Patreon campaign](https://patreon.com/foosel), on [GitHub Sponsors](https://github.com/users/foosel/sponsorship), via [Ko-fi](https://ko-fi.com/octoprint) or [Donorbox](https://donorbox.org/support-octoprint?recurring=true)!
